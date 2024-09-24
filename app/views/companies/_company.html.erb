@@ -1,0 +1,35 @@
+<div class="flex flex-wrap justify-center space-x-4">
+  <div id="<%= dom_id company %>" class="bg-white rounded-lg shadow-md p-6 max-w-sm transition-transform transform hover:shadow-lg hover:scale-105 flex flex-col">
+    
+    <% if company.image.attached? %>
+      <div class="mb-4">
+        <%= image_tag company.image, class: "rounded-lg object-cover h-48 w-full" %>
+      </div>
+    <% end %>
+    
+    <div class="flex flex-col flex-grow">
+      <p class="text-2xl font-bold mb-2">
+        <%= company.name %>
+      </p>
+      
+      <div class="text-gray-700 mb-2">
+        <p>
+          <strong>Endereço:</strong> <%= company.address %>
+        </p>
+        <p>
+          <strong>Telefone:</strong> <%= company.phone %>
+        </p>
+        <p>
+          <strong>Website:</strong> <%= link_to company.website, company.website, class: "text-blue-500 hover:underline" %>
+        </p>
+        <p>
+          <strong>Categoria:</strong> <%= company.category %>
+        </p>
+      </div>
+      <br>
+      <div class="mt-auto">
+        <%= link_to "Ver esta empresa", company, class: "bg-blue-500 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-600 transition" %>
+      </div>
+    </div>
+  </div>
+</div>
